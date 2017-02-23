@@ -23,7 +23,7 @@ In the end it turns all of them are just variants on a Python script that was or
 
 First off Avahi doesn't seem to support aliases directly through one of their standard commands (someone did submit a patch, see [here](https://lists.freedesktop.org/archives/avahi/2012-July/002173.html) and [here](https://lists.freedesktop.org/archives/avahi/2012-July/002173.html), but it never got accepted) but their website (essentially offline since sometime in 2016) used to host a very short and simple Python script that would do this.
 
-It's included here as [`avahi-alias`](avahi-alias) and was taken from the October 2015 [archived version](https://web.archive.org/web/20151016190620/http://www.avahi.org/wiki/Examples/PythonPublishAlias) of the original wiki page as found on the Wayback Machine.
+That script is included here as [`avahi-alias`](avahi-alias) and was taken from the October 2015 [archived version](https://web.archive.org/web/20151016190620/http://www.avahi.org/wiki/Examples/PythonPublishAlias) of the original wiki page as found on the Wayback Machine.
 
 Note that the script depends on avahi and dbus imports. Dbus should be installed by default but for avahi you need to do:
 
