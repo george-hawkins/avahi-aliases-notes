@@ -82,6 +82,8 @@ Nearly all of them are minor variants on the Avahi wiki script. Here are my note
 
 Github user Gdamjan took the original Avahi wiki script (as you can see from the [commit history](https://gist.github.com/gdamjan/3168336/revisions)) and modified it slightly to create [this gist](https://gist.github.com/gdamjan/3168336). The only changes are that it outputs some helpful usage information if you don't specify any aliases,  uses some more concise Python constructs and automatically adds `.local` if required.
 
+**Update:** it turns out that Github user Gdamjan and the author of the original Avahi wiki script are the same person - Damjan Georgievski.
+
 Github user Airtonix took Gdamjan's gist and turned in into [avahi-aliases](https://github.com/airtonix/avahi-aliases) - making it [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)) installable and useable as a daemon (with names stored in `/etc/avahi/aliases.d/default`). A script for use with Upstart (Ubuntu's old init system) is included. The core Avahi code is identical to that in Gdamjan's gist.
 
 Let's demonstrate it quickly by modifying it slightly to run from the command line (rather than as a daemon) and then getting it to advertise `simple-test.local`:
