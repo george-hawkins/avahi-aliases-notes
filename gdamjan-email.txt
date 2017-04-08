@@ -1,0 +1,74 @@
+vered-To: george.hawkins at b*ta-engine.net
+Received: by 10.140.83.133 with SMTP id j5csp672106qgd;
+        Sat, 8 Apr 2017 07:56:02 -0700 (PDT)
+X-Received: by 10.28.220.132 with SMTP id t126mr3818985wmg.140.1491663362861;
+        Sat, 08 Apr 2017 07:56:02 -0700 (PDT)
+Return-Path: <gdamjan at gm*il.com>
+Received: from mail-wr0-x232.google.com (mail-wr0-x232.google.com. [2a00:1450:400c:c0c::232])
+        by mx.google.com with ESMTPS id x184si3856481wmd.52.2017.04.08.07.56.02
+        for <george.hawkins at b*ta-engine.net>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 08 Apr 2017 07:56:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of gdamjan at gm*il.com designates 2a00:1450:400c:c0c::232 as permitted sender) client-ip=2a00:1450:400c:c0c::232;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i= at gm*il.com;
+       spf=pass (google.com: domain of gdamjan at gm*il.com designates 2a00:1450:400c:c0c::232 as permitted sender) smtp.mailfrom=gdamjan at gm*il.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=gmail.com
+Received: by mail-wr0-x232.google.com with SMTP id t20so124776545wra.1
+        for <george.hawkins at b*ta-engine.net>; Sat, 08 Apr 2017 07:56:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=yvJ772c3YD/DsfZgnBmOrBVGMneVBosGLZT8n1XPU2I=;
+        b=EGebC/7xlSHfBC2baVMY/feXqrElJyUYcHdwKHPCLCHdhQRqAdrYmY0JeNIGjl/I61
+         vM6liPvEWO8xKsK6tGFM8Za1vuCXUfU2nl8ivotWS7o7stO9hfSxdAPliUocAZxFOJf/
+         U+8fmPU+yZ61jrQ6fvRaZft9kQV9SwEsVs7gJH5BtdaUVlUzpb1phnQdj6awKfHdVhzf
+         6XA2/eQrX0PA+c6ssDwxAUuR6FGYBBw56EipzTbj1qKnZB0B/pZjtbSqWrYsWZWpJUaN
+         WNfDS27p0ydUoHUlSyugk0G983r1KS6yb5CcjXM0fy8Agh8HWbhWCGNK0yp/BKLnIhlx
+         y+LA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=yvJ772c3YD/DsfZgnBmOrBVGMneVBosGLZT8n1XPU2I=;
+        b=rWeMhhxQxorlXi9Afxq2ZNdzMoaJRsN/PSGLDRqnwVTBsBQDu9rlofjOdQYzoIQPBl
+         O3O8sO8fMh6J7SbcsBIQlvMhOsRkel2TB0HOSWYETQBnGBHwKFUK7cvXkRG3+e0ExGMU
+         veO4OhkKn1Lc4t6yMHNwVpZqLiV84W0xTmjxo3huHewTsDO5025NiYGkqIYAFzA2Z0R2
+         Ku66140Ld3oT6cHRtdUMYE0nPW2I6ejUbzZi6bJjFRgr0hnG2tOHucLThWmVALwVtGYf
+         omzWkaTWp/LSV1ODMMlGGusQZY4s2YTD5Rk2/GCle66/OoZ27Zw8gYRs4dOYMzgLkxaj
+         3xvg==
+X-Gm-Message-State: AFeK/H2Ou3l/BY7KyuUxOeU8H38lyeL+9Jab5FypvcAJYTQa24VMp/a4gYVDOGidjdIotrTPaKGdKocJ0S9YCg==
+X-Received: by 10.223.142.23 with SMTP id n23mr15542311wrb.188.1491663362056; Sat, 08 Apr 2017 07:56:02 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.28.23.136 with HTTP; Sat, 8 Apr 2017 07:56:01 -0700 (PDT)
+In-Reply-To: <CAFNKdcu43U1P2AeJeOs8jH5WNDObYCuMB2Ki8uPQbZ3sCwLeeQ@mail.gmail.com>
+References: <CAFNKdcu43U1P2AeJeOs8jH5WNDObYCuMB2Ki8uPQbZ3sCwLeeQ@mail.gmail.com>
+From: Damjan Georgievski <gdamjan at gm*il.com>
+Date: Sat, 8 Apr 2017 16:56:01 +0200
+Message-ID: <CAEk1YH6v=rAtO5dTHQS4_P=nB3V991YwyKoF5fHZROnHoOmomg@mail.gmail.com>
+Subject: Re: License for avahi-alias.py script on old Avahi wiki?
+To: George Hawkins <george.hawkins at b*ta-engine.net>
+Content-Type: text/plain; charset=UTF-8
+
+On 8 April 2017 at 15:16, George Hawkins <george.hawkins at b*ta-engine.net> wrote:
+> Hi Damjan --
+>
+> I wrote a note on using the avahi-alias.py script that you contributed to
+> the old Avahi wiki way back in 2006.
+>
+> Someone asked me about the license related to this script and I said I'd
+> email you (in the meantime I've added a brief license section to my page).
+>
+> Do you consider the script public domain or as released under some general
+> Avahi license (I couldn't find anything in the Wiki e.g. commenting that all
+> code on the wiki is considered covered by one license or another)?
+>
+> Regards and thanks for the script :)
+
+Hi George,
+
+I consider it public domain
+
+
+-- 
+damjan

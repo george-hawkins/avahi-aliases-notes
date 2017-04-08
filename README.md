@@ -69,7 +69,7 @@ Licenses
 
 The [`avahi-alias.service`](avahi-alias.service) at just ten lines hardly seems to warrant a license, but as I was asked about [this](https://github.com/george-hawkins/avahi-aliases-notes/issues/1) I've included a [`LICENSE`](LICENSE.txt) file here and release the service file under the version 2 Apache license.
 
-The [Python script](avahi-alias), that does the real work, was written by Damjan Georgievski and contributed to the Avahi wiki in 2006. There is no statement there as to any specific license and it has been incorporated into many projects (see later) that have been released under various different licenses. I've emailed Damjan about this.
+The [Python script](avahi-alias), that does the real work, was written by Damjan Georgievski and contributed to the Avahi wiki in 2006. I wrote Damjan and he replied (see [`gdamjan-email.txt`](gdamjan-email.txt)) saying that he considered this script to be public domain.
 
 Alternative projects
 --------------------
