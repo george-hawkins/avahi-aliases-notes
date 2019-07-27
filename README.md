@@ -23,7 +23,7 @@ In the end it turns all of them are just variants on a Python script that was or
 
 First off Avahi doesn't seem to support aliases directly through one of their standard commands (someone did submit a patch, see [here](https://lists.freedesktop.org/archives/avahi/2012-July/002173.html) and [here](https://lists.freedesktop.org/archives/avahi/2012-July/002173.html), but it never got accepted) but their website (essentially offline since sometime in 2016) used to host a very short and simple Python script that would do this.
 
-That script is included here as [`avahi-alias`](avahi-alias) and was taken from the October 2015 [archived version](https://web.archive.org/web/20151016190620/http://www.avahi.org/wiki/Examples/PythonPublishAlias) of the original wiki page as found on the Wayback Machine.
+That script is included here as [`avahi-alias-python2`](avahi-alias-python2) and was taken from the October 2015 [archived version](https://web.archive.org/web/20151016190620/http://www.avahi.org/wiki/Examples/PythonPublishAlias) of the original wiki page as found on the Wayback Machine.
 
 Note that the script depends on avahi and dbus imports. Dbus should be installed by default but for avahi you need to do:
 
@@ -36,6 +36,46 @@ Then to advertise a CNAMEs simply run the script like so:
 You can specify as many names as you want (separated by spaces). The names will be advertised as long as the script is left running, just press control-C to exit.
 
 Note: all names must end in `.local`.
+
+Python 3
+--------
+
+The original `avahi-alias` script was written for Python 2. It has been updated to Python 3 and now depends on `python3-avahi` rather than the old Python 2 dependency `python-avahi`. However, at the time of writing (July 27th, 2019), this dependency is not yet availble for Ubuntu. It is already available for distributions such as Fedora and bug [#1771033](https://bugs.launchpad.net/ubuntu/+source/avahi/+bug/1771033) is tracking making it available for Ubuntu. As noted in the bug the [source](https://github.com/lathiat/avahi/tree/master/avahi-python) is ready and YavDR has made a [packaged version](https://launchpad.net/~yavdr/+archive/ubuntu/experimental-main) available.
+
+So first I'd suggest seeing if `python3-avahi` has been released by the time you read this:
+
+    $ sudo apt update
+    $ sudo apt install python3-avahi
+    ...
+    E: Unable to locate package python3-avahi
+
+If a version is still not available then use the one from the bug. There's no point installing a PPA for a single package (and one that's so trivial) so just download it. Go to the page [`~yavdr/.../experimental-main`](https://launchpad.net/~yavdr/+archive/ubuntu/experimental-main/+packages), find and click on `python3-avahi-...` and you'll see a list of package files. Click on the `.deb` and the file will be downloaded.
+
+Let's have a look at the downloaded package:
+
+    $ cd ~/Downloads
+    $ dpkg -c /home/ghawkins/Downloads/python3-avahi_0.0.1-1yavdr1_bionic_all.deb
+    -rw-r--r-- root/root      3517 2016-01-10 17:13 ./usr/lib/python3/dist-packages/avahi/ServiceTypeDatabase.py
+    -rw-r--r-- root/root      3082 2016-01-10 16:52 ./usr/lib/python3/dist-packages/avahi/__init__.py
+    -rw-r--r-- root/root       187 2018-03-01 09:52 ./usr/lib/python3/dist-packages/pyhton3_avahi-0.0.1.egg-info
+    -rw-r--r-- root/root       290 2018-03-01 09:52 ./usr/share/doc/python3-avahi/changelog.Debian.gz
+    -rw-r--r-- root/root      5453 2018-03-01 09:52 ./usr/share/doc/python3-avahi/copyright
+    $ dpkg -I /home/ghawkins/Downloads/python3-avahi_0.0.1-1yavdr1_bionic_all.deb
+     ...
+     Depends: python3:any (>= 3.3.2-2~), python3-dbus, python3-gdbm
+     ...
+
+So basically it just consists of two Python files - `ServiceTypeDatabase.py` and `__init__.py` and, in addition to Python 3 itself, has just two dependencies - `python3-dbus` and `python3-gdbm`.
+
+So go ahead and install the package:
+
+    $ sudo apt install ./python3-avahi_0.0.1-1yavdr1_bionic_all.deb
+
+Now you can run the Python 3 version of the script included here:
+
+    $ ./avahi-alias spark-master.local
+
+**Credits:** the [`avahi-alias`](avahi-alias) script is just a lightly modified version of the original Python 2 script but thank you to [Robert Nagtegaal](https://github.com/masikh) for submitting a [pull request](https://github.com/george-hawkins/avahi-aliases-notes/pull/2/files) that motivated these changes and which includes a more thorough rewrite of `avahi-alias` into a Python class that does not depend on `python3-avahi` (but instead defines the few additional constants, that are needed, itself).
 
 Systemd
 -------
