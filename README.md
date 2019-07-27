@@ -31,7 +31,7 @@ Note that the script depends on avahi and dbus imports. Dbus should be installed
 
 Then to advertise a CNAMEs simply run the script like so:
 
-    $ ./avahi-alias spark-master.local
+    $ ./avahi-alias-python2 spark-master.local
 
 You can specify as many names as you want (separated by spaces). The names will be advertised as long as the script is left running, just press control-C to exit.
 
