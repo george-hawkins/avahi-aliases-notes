@@ -1,9 +1,10 @@
 [Unit]
 Description=Avahi Alias
 After=avahi-daemon.service
+Requires=avahi-daemon.service
 
 [Service]
-User=nobody
+DynamicUser=yes
 ExecStart=/bin/bash -c '/usr/local/bin/avahi-alias $(< /etc/avahi/aliases)'
 
 [Install]
